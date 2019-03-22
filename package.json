@@ -1,0 +1,25 @@
+{
+  "name": "schoolproject",
+  "version": "1.0.0",
+  "description": "REST API using ExpressJS with database mysql for a school project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "herudi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql": "^2.16.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanjeethm/schoolproject.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sanjeethm/schoolproject/issues"
+  },
+  "homepage": "https://github.com/sanjeethm/schoolproject#readme"
+}
