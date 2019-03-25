@@ -13,7 +13,7 @@ CREATE TABLE STUDENT
   (50) not null, teacher_name varchar
   (50) not null, teacher_email varchar
   (50) not null, constraint pk_example primary key
-  (id) );
+  (student_id) );
 
   INSERT INTO STUDENT
     ( student_id, student_name, student_email, teacher_name, teacher_email)
