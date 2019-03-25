@@ -2,7 +2,7 @@ var db_connect = require("../common/connection");
 
 var student = {};
 
-//get all person
+//get all student
 student.all = async function(req, res) {
   try {
     var query = `select * from student`;
@@ -28,22 +28,22 @@ student.byId = async function(req, res) {
 };
 
 //search name
-person.search = async function(req, res) {
+student.search = async function(req, res) {
   try {
     var name = req.params.name;
-    var query = `select * from person where name like '%${name}%'`;
-    var persons = await db_connect.query(query);
-    res.send(persons);
+    var query = `select * from student where name like '%${name}%'`;
+    var students = await db_connect.query(query);
+    res.send(students);
   } catch (err) {
     throw new Error(err);
   }
 };
 
-//create person
-person.create = async function(req, res) {
+//create student
+student.create = async function(req, res) {
   try {
-    var person = req.body;
-    var query = `insert into person (
+    var student = req.body;
+    var query = `insert into student (
             name,
             address,
             phone,
@@ -57,9 +57,9 @@ person.create = async function(req, res) {
             now()
         )`;
     var result = await db_connect.query(query, {
-      name: person.name,
-      address: person.address,
-      phone: person.phone
+      name: student.name,
+      address: student.address,
+      phone: student.phone
     });
     res.send({
       status: "success",
@@ -70,22 +70,22 @@ person.create = async function(req, res) {
   }
 };
 
-//update person
-person.update = async function(req, res) {
+//update student
+student.update = async function(req, res) {
   try {
-    var person_id = req.params.person_id;
-    var person = req.body;
-    var query = `update person set 
+    var student_id = req.params.student_id;
+    var student = req.body;
+    var query = `update student set 
             name=:name,
             address=:address,
             phone=:phone,
             updated_at=now() 
             where person_id=:person_id`;
     var result = await db_connect.query(query, {
-      name: person.name,
-      address: person.address,
-      phone: person.phone,
-      person_id: person_id
+      name: student.name,
+      address: student.address,
+      phone: student.phone,
+      student_id: student_id
     });
     res.send({
       status: "success",
@@ -96,13 +96,13 @@ person.update = async function(req, res) {
   }
 };
 
-//delete person
-person.delete = async function(req, res) {
+//delete student
+student.delete = async function(req, res) {
   try {
-    var person_id = req.params.person_id;
-    var query = `delete from person where person_id=:person_id`;
+    var student_id = req.params.student_id;
+    var query = `delete from student where student_id=:student_id`;
     var result = await db_connect.query(query, {
-      person_id: person_id
+      student_id: student_id
     });
     res.send({
       status: "success",
@@ -113,4 +113,4 @@ person.delete = async function(req, res) {
   }
 };
 
-module.exports = person;
+module.exports = student;
