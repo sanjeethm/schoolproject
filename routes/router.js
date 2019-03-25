@@ -1,12 +1,12 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
-var person = require('./../controller/person');
+var person = require("../controller/student");
 
-router.get('/person', person.all);
-router.post('/person', person.create);
-router.get('/person/:person_id', person.byId);
-router.get('/person/search/:name', person.search);
-router.put('/person/:person_id', person.update);
-router.delete('/person/:person_id', person.delete);
+router.get("/student", student.all);
+router.post("/student", student.create);
+router.get("/student/:student_id", student.byId);
+router.get("/student/search/:name", student.search);
+router.put("/student/:student_id", student.update);
+router.delete("/student/:student_id", student.delete);
 
 module.exports = router;
