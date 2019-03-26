@@ -80,7 +80,7 @@ student.update = async function(req, res) {
             address=:address,
             phone=:phone,
             updated_at=now() 
-            where person_id=:person_id`;
+            where student_id=:student_id`;
     var result = await db_connect.query(query, {
       name: student.name,
       address: student.address,
