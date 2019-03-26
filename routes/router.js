@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-var person = require("../controller/student");
+var student = require("../controller/student");
 
 router.get("/student", student.all);
 router.post("/student", student.create);
